@@ -30,8 +30,8 @@ To setup this account on the device, go to *Settings > General > Acccounts > Add
 
 Click on **Add account** and then follow the instructions after that. Use the following Google account credentials:
 
-username: ernest@validmeasures.org
-password: TO BE SENT ON EMAIL
+**username:** ernest@validmeasures.org    
+**password:** TO BE SENT ON EMAIL
 
 This account is an Google Workspace account and is at enterprise level with added security. When this account is used, a security measure for authentication will be initiated and the administrator will have to approve the login. Please notify Ernest Guevarra when devices are being setup so that this authenication can be approved in real time.
 
