@@ -41,7 +41,7 @@ jobs:
         
       - name: Render document
         run: |
-          quarto render bland-altman.qmd
+          quarto render device-setup.qmd
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
