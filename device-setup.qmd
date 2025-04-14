@@ -1,0 +1,223 @@
+---
+title: Setting up the Samsung SM-T230
+subtitle: Notes on android mobile device setup for data collection
+author:
+  - name: Ernest Guevarra
+    orcid: 0000-0002-4887-4415
+    email: ernest.guevarra@ndm.ox.ac.uk
+    affiliation: 
+      - name: Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford
+        city: Oxford
+date: "14 April 2025"
+date-format: "DD MMMM YYYY"
+---
+
+This document provides specific guidance on how to setup the [Samsung SM-T230](https://www.samsung.com/uk/support/model/SM-T230NZWAAUT/) tablets for data collection using [Open Data Kit (ODK)](https://getodk.org/). These notes are specific to the five (5) Samsung devices that have been provided.
+
+## Setting up device from reset {#sec-setup-reset}
+
+This section describes how to setup a Samsuing SM-T230 that is new or has been factory reset. These notes are specific to 2 of the devices (out of the 5) that have been factory reset. These notes focus on specific steps of the setup process and assumes that the user is able to go through the guided setup process provided by Samsung on start-up. For notes on general mobile device setup, please refer to this [guide](https://oxford-ihtm.io/sc-ca-patient-survey-handbook/mobile-device-setup.html).
+
+These steps will require the internet so please make sure to setup an internet connection first before doing these steps. 
+
+### Setting up Google account {#sec-setup-google}
+
+Android devices can run without a Google account. However, for the purposes of these specific tablets and for the ability to monitor the use of the tablets remotely, we would like to setup these tablets with a Google account. We will use the same Google account used in the other 3 devices that already has a Google account.
+
+To setup this account on the device, go to *Settings > General > Acccounts > Add account* (see @fig-accounts-settings).
+
+![Accounts settings](images/samsung_16.png){#fig-accounts-settings fig-alt="The accounts settings menu" fig-align="center" width="50%"}
+
+Click on **Add account** and then follow the instructions after that. Use the following Google account credentials:
+
+username: ernest@validmeasures.org
+password: TO BE SENT ON EMAIL
+
+This account is an Google Workspace account and is at enterprise level with added security. When this account is used, a security measure for authentication will be initiated and the administrator will have to approve the login. Please notify Ernest Guevarra when devices are being setup so that this authenication can be approved in real time.
+
+Once this has been approved and the account has been authenticated, the device will now be setup for that specific Google account.
+
+### Installing ODK Collect {#sec-install-odk-collect}
+
+[ODK Collect](https://docs.getodk.org/collect-intro/) is an open-source Android application used for data collection in the field, often in places with limited or no internet connectivity. It's part of the Open Data Kit (ODK) suite, which is widely used in research, humanitarian work, agriculture, health surveys, and more. The latest version of ODK Collect is v2025.1 and can be installed vai the Google Play Store.
+
+However, the Samsung SM-T230 is a relatively old mobile device with Android v4.4.2 (KitKat) version installed. These devices do not support later Android versions (v5 and higher). Because of this, these devices can only install up to a certain version of ODK Collect (specifically [v1.25](https://forum.getodk.org/t/odk-collect-v1-25/23927)). Whilst this doesn't have any implications with our being able to run the survey using ODK Collect (v1.25 has all the features that we need for our current form), it does mean that we have to install ODK Collect v1.25 via [sideloading](https://www.howtogeek.com/313433/how-to-sideload-apps-on-android/) rather than via the Google Play Store.
+
+Following are the steps on how to sideload ODK Collect v1.25.
+
+<!-- #### Set tablets to developer mode {#sec-developer-mode}
+
+To enable developer mode on a Samsung SM-T230 running Android 4.4.2, navigate to *Settings > About device*, scroll down to *Build number*, and then tap the Build number menu seven times. This will unlock the Developer options menu, which can now be found under *Settings > General > Developer options*.
+
+**Detailed Steps:**
+
+* **Go to Settings:** Open the Settings app on the device.
+
+* **Go to About device:** Navigate to *About device* within the Settings menu.
+
+* **Find Build number:** Scroll down until you find *Build number*. 
+
+* **Tap Build number seven times:** Tap the *Build number* option seven times in succession.
+
+* **You are now a developer!:** A message will pop up saying "You are now a developer!".
+
+* **Access Developer options:* The *Developer options* menu will now be available under *Settings > General > Developer options* -->
+
+#### Allow installation of apps from unknown sources {#sec-allow-sideload}
+
+To allow installation of apps from unknown sources, navigate to Settings > Security*, scroll down to *Unknown sources* option then toggle the button to allow installation of apps from unknown sources.
+
+#### Download the APK file for ODK Collect v1.25 {#sec-download-apk}
+
+On the tablet's built-in browser, download the APK for ODK Collect v1.25 using this link - https://github.com/opendatakit/collect/releases/download/v1.25.0/ODK-Collect-v1.25.0.apk.
+
+#### Install ODK Collect v1.24 {#sec-install-apk}
+
+Navigate to the download folder and find the file `ODK-Collect-v1.25.0.apk`. Tap the file and then follow the prompts to install this version of ODK Collect.
+
+\newpage
+
+## Setting up ODK Collect for data collection {#sec-setup-odk-collect}
+
+This section is for all five Samsung SM-T230 devices provided after they have all been setup with a Google account and ODK Collect v1.25 installed.
+
+### Open ODK Collect {#sec-open-odk-collect}
+
+Go to the ODK Collect application and then tap on it (@fig-odk-collect-app). The ODK Collect app menu will then be seen (@fig-odk-collect-menu).
+
+::: {#fig-odk-collect layout-ncol=2 layout-valign="bottom"}
+
+![ODK Collect app](images/odk_collect_01.png){#fig-odk-collect-app fig-alt="The ODK Collect app"}
+
+![ODK Collect menu](images/odk_collect_02.png){#fig-odk-collect-menu fig-alt="The ODK Collect app menu"}
+
+ODK Collect app
+
+:::
+
+\newpage
+
+### Reset ODK Collect {#sec-reset-odk-collect}
+
+1. Go to *Admin Settings* of ODK Collect (@fig-odk-collect-admin-settings). 
+
+2. Select *Reset application...* (@fig-odk-collect-reset-application) option. 
+
+3. Tick the boxes for (@fig-odk-collect-reset-options):
+
+* All settings (internal settings, saved settings)
+
+* Saved forms (instances folder, instances database)
+
+* Blank forms (forms folder, forms database, itemsets database)
+
+* Form load cache (.cache folder)
+
+::: {#fig-odk-collect-reset layout-ncol=3 layout-valign="bottom"}
+
+![Admin settings](images/odk_collect_03.png){#fig-odk-collect-admin-settings fig-alt="The ODK Collect Admin Settings"}
+
+![Reset application](images/odk_collect_04.png){#fig-odk-collect-reset-application fig-alt="The ODK Collect reset application option"}
+
+![Select reset options](images/odk_collect_05.png){#fig-odk-collect-reset-options fig-alt="The ODK Collect reset options"}
+
+ODK Collect reset application steps
+
+:::
+
+\newpage
+
+### Connect ODK Collect to the KoboToolbox server {#sec-connect-odk-collect-kobotoolbox}
+
+1. Go to *General Settings* of ODK Collect (@fig-odk-collect-general-settings). 
+
+2. Select *Server* option (@fig-odk-collect-server-settings).
+
+::: {#fig-odk-collect-general layout-ncol=3 layout-valign="bottom"}
+
+![General settings](images/odk_collect_06.png){#fig-odk-collect-general-settings fig-alt="The ODK Collect General Settings"}
+
+![Server settings](images/odk_collect_07.png){#fig-odk-collect-server-settings fig-alt="The ODK Collect server settings"}
+
+![Server settings options](images/odk_collect_08.png){#fig-odk-collect-server-settings-options fig-alt="The ODK Collect server settings options"}
+
+ODK Collect server settings menu
+
+:::
+
+\newpage
+
+3. Enter URL for the KoboToolbox server (@fig-odk-collect-server-url). This should be set to `https://kc-eu.kobotoolbox.org`.
+
+4. Enter username for the KoboToolbox server account (@fig-odk-collect-server-username). This should be set to `ihtmbot`.
+
+5. Enter password for the KoboToolbox server account (@fig-odk-collect-server-password). Password will be provided separately on an email.
+
+::: {#fig-odk-collect-server layout-ncol=3 layout-valign="bottom"}
+
+![URL](images/odk_collect_09.png){#fig-odk-collect-server-url fig-alt="The ODK Collect server URL"}
+
+![Username](images/odk_collect_10.png){#fig-odk-collect-server-username fig-alt="The ODK Collect server username"}
+
+![Password](images/odk_collect_11.png){#fig-odk-collect-server-password fig-alt="The ODK Collect server password"}
+
+ODK Collect server settings
+
+:::
+
+\newpage
+
+The ODK Collect server settings has now been set/updated (@fig-odk-collect-server-update)
+
+![Server settings set/updated](images/odk_collect_12.png){#fig-odk-collect-server-update fig-alt="The ODK Collect server settings set/updated" fig-align="center" width="50%"}
+
+### Get blank forms {#sec-get-blank-odk-collect}
+
+1. In the main ODK Collect menu, select *Get Blank Form* (@fig-odk-collect-get-blank). ODK Collect will connect to the KoboToolbox server (@fig-odk-collect-get-blank-info).
+
+::: {#fig-odk-collect-retrieve-menu layout-ncol=2 layout-valign="bottom"}
+
+![Get blank form option](images/odk_collect_13.png){#fig-odk-collect-get-blank fig-alt="Selecting get blank form option"}
+
+![Connect to server for blank form information](images/odk_collect_14.png){#fig-odk-collect-get-blank-info fig-alt="Retrieving information on blank forms from server"}
+
+ODK Collect retrieving selected blank forms
+
+:::
+
+\newpage
+
+2. Select the blank forms to retrieve and tap *Get Selected* (@fig-odk-collect-select-retrieve). ODK Collect will retrieve the selected forms from the server ([@fig-odk-collect-retrieve-forms, @fig-odk-collect-retrieved-forms]).
+
+::: {#fig-odk-collect-retrieve layout-ncol=3 layout-valign="bottom"}
+
+![Select blank forms](images/odk_collect_15.png){#fig-odk-collect-select-retrieve fig-alt="Selection of blank forms to retrieve"}
+
+![Retrieving from server](images/odk_collect_16.png){#fig-odk-collect-retrieve-forms fig-alt="Retrieving selected forms from server"}
+
+![Retrieved from server](images/odk_collect_17.png){#fig-odk-collect-retrieved-forms fig-alt="Selected forms retrieved from server"}
+
+ODK Collect retrieving selected blank forms
+
+:::
+
+\newpage
+
+### Filling blank forms {#sec-fill-blank-odk-collect}
+
+1. In the main ODK Collect menu, select *Fill Blank Form* (@fig-odk-collect-fill-blank). 
+
+2. Select blank form to fill (@fig-odk-collect-select-fill-blank).
+
+::: {#fig-odk-collect-fill-blank layout-ncol=2 layout-valign="bottom"}
+
+![Fill blank form option](images/odk_collect_18.png){#fig-odk-collect-fill-blank fig-alt="Selecting fill blank form option"}
+
+![Select blank form to fill](images/odk_collect_19.png){#fig-odk-collect-select-fill-blank fig-alt="Select blank form to fill"}
+
+ODK Collect filling selected blank form
+
+:::
+
+
+
