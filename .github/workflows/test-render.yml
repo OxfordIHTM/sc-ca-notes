@@ -37,7 +37,7 @@ jobs:
         shell: Rscript {0}
         
       - name: Render document
-        run: quarto render
+        run: quarto render device-setup.qmd
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3.0
