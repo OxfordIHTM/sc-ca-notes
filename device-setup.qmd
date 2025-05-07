@@ -8,7 +8,7 @@ author:
     affiliation: 
       - name: Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford
         city: Oxford
-date: "14 April 2025"
+date: "7 May 2025"
 date-format: "DD MMMM YYYY"
 ---
 
@@ -69,9 +69,9 @@ To allow installation of apps from unknown sources, navigate to Settings > Secur
 
 #### Download the APK file for ODK Collect v1.25 {#sec-download-apk}
 
-On the tablet's built-in browser, download the APK for ODK Collect v1.25 using this link - https://github.com/opendatakit/collect/releases/download/v1.25.0/ODK-Collect-v1.25.0.apk.
+On the tablet's built-in browser, download the APK for ODK Collect v1.25 using this [link](https://github.com/opendatakit/collect/releases/download/v1.25.0/ODK-Collect-v1.25.0.apk).
 
-#### Install ODK Collect v1.24 {#sec-install-apk}
+#### Install ODK Collect v1.25 {#sec-install-apk}
 
 Navigate to the download folder and find the file `ODK-Collect-v1.25.0.apk`. Tap the file and then follow the prompts to install this version of ODK Collect.
 
